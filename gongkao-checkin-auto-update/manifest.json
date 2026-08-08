@@ -1,0 +1,11 @@
+{
+  "name": "公考打卡",
+  "short_name": "公考打卡",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f5f0",
+  "theme_color": "#163b36",
+  "description": "公务员考试每日学习打卡与督促工具",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

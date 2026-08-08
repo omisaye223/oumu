@@ -1,0 +1,29 @@
+name: update-essay-feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 23 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Update feed
+        run: python gongkao-checkin-auto-update/backend/update_feed.py
+
+      - name: Commit feed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update essay feed"
+          file_pattern: gongkao-checkin-auto-update/feed.json
